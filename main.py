@@ -47,16 +47,16 @@ def run_random_test(session_id):
 
     print("\nRunning sorting algorithms...\n")
 
-    # Run Merge Sort
+    # Runs Merge Sort
     m_time, m_sorted = time_algorithm(merge_sort, transactions.copy())
 
-    # Run Heap Sort
+    # Runs Heap Sort
     h_time, h_sorted = time_algorithm(heap_sort, transactions.copy())
 
-    # Display sorted data
+    # Displays sorted data
     display_array("Sorted Transactions:", m_sorted)
 
-    # Determine faster algorithm
+    # Determine the faster algorithm
     faster = get_faster(m_time, h_time)
 
     print("\nResults")
