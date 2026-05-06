@@ -11,7 +11,16 @@ MAX_SIZE = 200000  # Maximum dataset size
 
 # Generates a list of random values
 def generate_transactions(size):
-    return [round(random.uniform(1.0, 10000.0), 2) for _ in range(size)]
+    transactions = []
+
+    for _ in range(size):
+        if random.choice([True, False]):
+            transactions.append(random.randint(1, 10000))
+
+        else:
+            transactions.append(round(random.uniform(1.0, 10000.0), 2))
+
+    return transactions
 
 
 def display_array(title, arr, limit=20):
@@ -78,7 +87,13 @@ def run_custom_test(session_id):
 
     try:
         
-        arr = list(map(int, user_input.split()))
+         arr = []
+        for value in user_input.split():
+            if "." in value:
+                arr.append(float(value))
+            else:
+                arr.append(int(value))
+
     except:
         print("Invalid input.\n")
         return
