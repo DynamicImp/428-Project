@@ -51,7 +51,7 @@ def run_random_test(session_id):
     
     transactions = generate_transactions(size)
 
-    # Display original data (limited to 20 items)
+    # Display original data
     display_array("Original Transactions:", transactions)
 
     print("\nRunning sorting algorithms...\n")
